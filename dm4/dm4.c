@@ -41,17 +41,7 @@ int isinArray(int arr[],int size, int vertex )
 }
 return 0;
 }
-/*edge isinArray(edge arr[], int size,edge one_edge)
-{
-    for(int i=0; i<size; i++)
-    {
-        if(arr[i] = one_edge)
-        {
-            return 1;
-        }
-    }
-    return 0;
-}*/
+
 int main(void)
 {
     edge edges[18];
@@ -97,33 +87,7 @@ int main(void)
             count++;
         }
     }
-    /*int temp;
-    for(int i=0; i<36; i++)
-    {
-        for(int j=0; j<36; j++)
-        {
-            if(i!=j)
-            {
-                if(vertexes[i]==vertexes[j])
-                {
-                    temp=vertexes[size-1];
-                    vertexes[size-i]=vertexes[j];
-                    vertexes[j]=temp;
-                    ult_vertexes[count]=vertexes[i];
-                    ult_vertexes[count]=vertexes[j];
-                    count++;
-                    size--;
-                }
-            } */
-
-    /* while(vertexes[i]==vertexes[j] && i!=j)
-     {
-         ult_vertexes[count]=vertexes[i];
-         count++;
-         break;
-     }
-}
-}*/
+    
     printf("The array of vertexes without repeats:\n");
     for(int i=0; i<11; i++)
     {
@@ -131,17 +95,7 @@ int main(void)
         printf("|");
     }
     printf("\n");
-    /* printf("The array of weight:\n");
-     int weight_of_edges[18];
-    for(int i=0;i<18;i++)
-    {
-         weight_of_edges[i]=edges[i].weight;
-         printf("%d",weight_of_edges[i]);
-         printf("|");
-    } */
-    printf("\n");
     int active_vertexes_arr[11];
-    //edge active_edges_arr[11];
     active_vertexes_arr[0]=ult_vertexes[0];
     int vcount=1;
     int active_ecount=0;
@@ -158,10 +112,6 @@ int main(void)
                 edges_selection[ecount]=edges[i];
                 ecount++;
             }
-            /*if(isinArray(active_edges_arr,active_ecount,edges[i]))
-            {
-                
-            }*/
         }
          edge min=min_weight(edges_selection,ecount);
          active_ecount++;
@@ -177,13 +127,5 @@ int main(void)
          vcount++;
      
     }while(vcount!=11);
-    /*for(int i=0; i<active_ecount;i++)
-         {
-            printf("%d-%d\n",min[i].first_vertex,min[i].second_vertex);
-         }*/
-        
-    
-     
-    printf("\n");   
-    
+    printf("\n");    
 }
